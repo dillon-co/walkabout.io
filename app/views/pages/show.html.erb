@@ -1,0 +1,12 @@
+  <div class="center hero">
+    <h1><%= @account.name %></h1>
+    <h3><%= @account.bio %></h3>
+  </div>
+
+  <div id="photos">
+  <% @photos.each do |p| %>
+    <div class="box">  
+    <%= image_tag p.images.standard_resolution.url %>
+    </div>
+  <% end %>
+  </div>
