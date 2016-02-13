@@ -1,0 +1,32 @@
+<div class="container marginTopXL">
+<%= form_for @event, url: contact_path do |e| %>
+  <fieldset>
+    <div class="field">
+      <%= e.text_field :name, placeholder: "Name" %>
+    </div>
+    
+    <div class="field">
+      <%= e.email_field :email, placeholder: "Email"%>
+    </div>
+    
+    <div class="field">
+      <%= e.text_field :type, placeholder: "type"%>
+    </div>
+    <div class="field">
+      <%= e.text_field :date_one, placeholder: "First Choice"%>
+    </div>
+    <div class="field">
+      <%= e.text_field :date_two, placeholder: "Second Choice"%>
+    </div>
+    <div class="field">
+      <%= e.text_field :date_three, placeholder: "Third Choice"%>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+    <div class="field">
+      <%= e.submit "Send" %>
+    </div>
+  </fieldset>
+<% end %>
+</div>

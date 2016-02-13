@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,14 +8,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <%= link_to 'WALKABOUT', marketing_path, class: "navbar-brand" %>
+        <% if set_account %>
+          <%= link_to set_account.name, portfolio_path, class: "navbar-brand" %>
+        <% else %>
+          <%= link_to 'WALKABOUT', marketing_path, class: "navbar-brand" %>
+        <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <% if set_account %>
+        <li><%= link_to 'Hire Me', contact_path %></li>
+        <li><%= link_to 'Blog', "#" %></li>
+        <% else %>
+        <li><%= link_to 'Pricing', "#" %></li>
+        <li><%= link_to 'Blog', "#" %></li>
+        <li><%= link_to 'Sign Up', "#" %></li>
+        <% end %>
         <% if current_user %>
-          <li><%= link_to 'Logout', sign_out_path %>
+          <% if current_user.name == set_account.name %>
+            <li><%= link_to 'Analytics', analytics_path %></li>
+            <li><%= link_to 'Logout', sign_out_path %></li>
+          <% end %>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

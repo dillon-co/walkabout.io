@@ -5,17 +5,18 @@ class ApplicationController < ActionController::Base
 
   before_action :set_account
 
-  # def require_account!
-  #   redirect_to root_url(subdomain: nil) if @account.nil? 
-  # end
   
   def set_account
-    @account = User.find_by(subdomain: request.subdomain)
+    @account ||= User.find_by(subdomain: request.subdomain)
   end
 
   def current_user
     @current_user ||= User.find_by(id: cookies[:user_id]) if cookies[:user_id]
   end
 
+
+
   helper_method :current_user
+  helper_method :set_account
+
 end

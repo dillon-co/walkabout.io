@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   class << self
     def from_omniauth(auth)
       provider = auth.provider

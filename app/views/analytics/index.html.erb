@@ -1,0 +1,45 @@
+<div class="container marginTopXL">
+
+  <div class="analytics">
+    <div class="numbers">  
+        <p class="bigNum"><%= @followers %></p>
+        <p>FOLLOWERS</p>
+    </div>
+
+    <div class="numbers">  
+        <p class="bigNum"><%= @following %></p>
+        <p>FOLLOWING</p>
+    </div>
+
+    <div class="numbers">  
+        <p class="bigNum"><%= @media %></p>
+        <p>POSTS</p>
+    </div>
+
+    <div class="numbers">  
+        <p class="bigNum"><%= @avgLikes %></p>
+        <P>AVG LIKES/POST</P>
+    </div>
+
+
+    <div class="numbers">  
+      <p class="bigNum"><%= ((@avgLikes.to_f / @followers.to_f) * 100).round(1) %>%</p>
+      <p>LIKES:FOLLOWER RATIO</p>
+    </div>
+
+    <div class="demographic">  
+      <p class="bigNum"> <%= ((@male.to_f / @gTotal.to_f).round(1) * 100) %>%</p>
+      <p>MALES</p>
+    </div>
+
+    <div class="demographic">  
+      <p class="bigNum">COMING SOON</p>
+      <p>LOCATION</p>
+    </div>
+
+<!--     <div class="influencers">  
+      <p class="bigNum">Influencer</p>
+    </div> -->
+  </div>
+
+</div>
