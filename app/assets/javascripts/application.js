@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require nested_form_fields
 //= require masonry/jquery.masonry
 //= require masonry/jquery.imagesloaded.min
 //= require turbolinks

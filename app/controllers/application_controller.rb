@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
 
   before_action :set_account
 
-  
+
+
+private
+
   def set_account
     @account ||= User.find_by(subdomain: request.subdomain)
   end
@@ -14,9 +17,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: cookies[:user_id]) if cookies[:user_id]
   end
 
+  def set_page
+    @user ||= User.find_by(subdomain: request.subdomain)
+    @page = @user.pages.all
+  end
 
 
   helper_method :current_user
   helper_method :set_account
+  helper_method :set_page
 
 end

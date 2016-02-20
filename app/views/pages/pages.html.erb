@@ -1,14 +1,13 @@
-
   <div class="center hero">
-    <h1><%= @account.name %></h1>
-    <h3><%= @account.bio %></h3>
+    <h1><%= @page.name %></h1>
     <%= link_to "Hire Me", contact_path, class: "btn btn-outline" %>
+
   </div>
 
   <div id="photos">
-  <% @photos.each do |p| %>
+  <% @page.images.each do |h| %>
     <div class="box">  
-    <%= image_tag p.images.standard_resolution.url %>
+    <%= image_tag h %>
     </div>
   <% end %>
   </div>

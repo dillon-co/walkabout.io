@@ -46,7 +46,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
-    autoprefixer-rails (6.3.2)
+    autoprefixer-rails (6.3.3)
       execjs
       json
     better_errors (2.1.1)
@@ -80,6 +80,8 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     figaro (1.1.1)
       thor (~> 0.14)
+    font-awesome-rails (4.5.0.1)
+      railties (>= 3.2, < 5.1)
     gendered (0.0.8)
       http (>= 0.6.2)
     globalid (0.3.6)
@@ -122,14 +124,16 @@ GEM
       mime-types (>= 1.16, < 3)
     masonry-rails (0.2.4)
       railties
-    material_icons (2.0.1)
-      railties (>= 3.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    nested_form_fields (0.7.4)
+      coffee-rails (>= 3.2.1)
+      jquery-rails
+      rails (>= 3.2.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     oauth2 (1.1.0)
@@ -226,6 +230,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   figaro
+  font-awesome-rails
   gendered
   instagram
   jbuilder (~> 2.0)
@@ -233,7 +238,7 @@ DEPENDENCIES
   jquery-turbolinks
   letter_opener
   masonry-rails (~> 0.2.0)
-  material_icons
+  nested_form_fields
   omniauth-instagram!
   pg (~> 0.15)
   rails (= 4.2.5)

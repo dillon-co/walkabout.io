@@ -1,0 +1,33 @@
+
+
+	<%= form_for @user do |f| %>
+	  <h4>Edit Your Email</h4>
+	  </br>
+	  <div class="form-group">
+	    <%= f.text_field :email, placeholder: "email", class: "form-control" %>
+	  </div>
+	  <hr>
+	  <h4>Edit Your Pages</h4>
+	  </br>
+	  <div class="row">
+		<%= f.nested_fields_for :pages do |p| %>
+			  <div class="col-md-10 form-group">
+			    <%= p.text_field :name, placeholder: "Create your pages ie Weddings, Engagements etc...", class: "form-control" %>
+			  </div>
+			  <div class="col-md-2 form-group">
+			  	<%= p.remove_nested_fields_link 'x', class: 'btn btn-danger', style: "width: 100%;", role: 'button' %>
+			  </div>
+			<% end %>
+		</div>
+		<div class="row">
+			<div class="col-md-10 form-group">
+			</div>
+			<div class="col-md-2 form-group">
+				<%= f.add_nested_fields_link :pages, '+', class: 'btn btn-success', style: 'width: 100%', role: 'button' %>
+			</div>
+		</div>
+
+	  <div class="form-group">
+	    <%= f.submit class: "btn btn-default" %>
+	  </div>
+	<% end %>

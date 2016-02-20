@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Walkaboutio</title>
+  <title>Walkabout</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,10 @@
 
 <div>
   <% flash.each do |name, msg| %>
-    <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+	  <div data-alert class="alert alert-#{name}" style="margin-bottom: 0px; padding: 25px;">
+	    <%= msg %>
+	    <a href="#" class="close">&times;</a>
+	  </div>
   <% end %>
 </div>
 <%= render partial: "layouts/navbar" %>
@@ -18,3 +21,18 @@
 
 </body>
 </html>
+
+<script>
+
+$(document).ready(function(){
+  setTimeout(function() {
+      $('.alert').slideUp('slow', function(){
+      });
+}, 3000);
+  $('.close').click(function(){
+    $('.alert').slideUp('slow', function(){
+    });
+  });
+
+});
+</script>

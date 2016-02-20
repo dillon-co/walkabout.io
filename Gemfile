@@ -13,13 +13,14 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'masonry-rails', '~> 0.2.0'
-gem 'material_icons'
 
+gem "font-awesome-rails"
 gem 'omniauth-instagram', github: 'ropiku/omniauth-instagram'
 gem 'instagram'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'figaro'
 gem 'gendered'
+gem 'nested_form_fields'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

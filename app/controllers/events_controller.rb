@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     
     if @event.valid?
-      EventMailer.new_event(@event).deliver
+      EventMailer.new_event(@event, set_account).deliver
       redirect_to contact_path, notice: "Your messages has been sent."
     else
       flash[:alert] = "An error occurred while delivering this message."

@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require 'masonry/transitions'
- *= require material_icons
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -31,6 +31,7 @@ $navbar-default-border: transparent;
 $navbar-margin-bottom: 0px;
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import "font-awesome";
 @import "bootstrap";
 
 
@@ -60,6 +61,9 @@ h1,h2,h3,h4,h5,h6,p,a{
 
 .marginTopXL{
   margin-top: 100px;
+}
+.marginTopXXL{
+  margin-top: 150px;
 }
 
 
@@ -105,10 +109,18 @@ h1,h2,h3,h4,h5,h6,p,a{
 
 #photos {
   margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
   .box {
+    flex: 1 1 33%;
     width: 33%;
     position: relative;
+    &:hover{
+      background-color: red;
+      cursor: pointer;
+}
   }
 
 
@@ -179,57 +191,5 @@ h1,h2,h3,h4,h5,h6,p,a{
 }
 
 
-////////////////////////////////////////////////// CALENDAR /////////////////////////////////////////////////////
 
-.simple-calendar {
-  .day {
-    background-color: #fff;
-    border: 1px solid $grey;
-    height: 100px;
-    width: 50px;
-  }
-
-  .wday-0 {}
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
-
-  .today {
-    background-color: #fff9c4;
-  }
-  .past {
-    background-color: #ffcdd2;
-  }
-  .future {}
-
-  .start-date {}
-
-  .prev-month {
-    background-color: $ltltGrey;
-  }
-  .next-month {
-    background-color: $ltltGrey;
-   }
-  .current-month {}
-
-  .has-events {
-  }
-  .event{
-    margin-top: 2px;
-    padding: 2px;
-    color: white;
-    background-color: #f44336;
-  }
-}
-
-  .schedule{
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: flex-end;
-
-  }
 
