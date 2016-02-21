@@ -13,5 +13,4 @@ class Page < ActiveRecord::Base
     self.save!
     self
   end
-
 end

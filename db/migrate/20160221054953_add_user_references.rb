@@ -1,4 +1,4 @@
-class AddUsersToPages < ActiveRecord::Migration
+class AddUserReferences < ActiveRecord::Migration
   def change
     add_reference :pages, :user, index: true, foreign_key: true
   end
