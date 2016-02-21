@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   def self.load
     Walkaboutio::Application.routes.draw do
-      Pages.all.each do |pg|
+      Page.all.each do |pg|
         get "/#{pg.name}", to: "pages#pages", defaults: { id: pg.id }
       end
     end
