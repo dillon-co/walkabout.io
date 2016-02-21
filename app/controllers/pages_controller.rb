@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @photos = client.user_recent_media(@account.uid, {:count => 20})
   end
 
-  def pages
+  def instapage
     @page = Page.find(params[:id])
     @bio = @account.bio
   end
