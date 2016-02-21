@@ -26,19 +26,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.load
-    Walkaboutio::Application.routes.draw do
-      Page.all.each do |pg|
-        get "/#{pg.name}", to: "pages#pages", defaults: { id: pg.id }
-      end
-    end
-  end
-
-
-  def self.reload
-    Walkaboutio::Application.routes_reloader.reload!
-  end
-
   def self.load_pages
     User.find_each do |u|
       client = Instagram.client(access_token: u.accesstoken)
